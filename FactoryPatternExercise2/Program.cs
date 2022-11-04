@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("What Database would you like to Select? ");
+            string userInput = Console.ReadLine();
+            IDataAccess uI = DataAccessFactory.GetDataAccessType(userInput);
+            uI.LoadData();
+            uI.SaveData();
         }
     }
 }
